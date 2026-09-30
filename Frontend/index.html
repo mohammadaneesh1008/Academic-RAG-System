@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academic RAG Assistant</title>
+
+      <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon">📚</div>
+
+                <div>
+                    <h2>Academic RAG</h2>
+                    <p>AI Study Assistant</p>
+                </div>
+            </div>
+
+
+            <!-- Upload Section -->
+            <div class="sidebar-section">
+
+                <h3>Documents</h3>
+
+                <label class="upload-box" for="pdfFile">
+
+                    <div class="upload-icon">
+                        📄
+                    </div>
+
+                    <strong>Upload PDF</strong>
+
+                    <span>
+                        Click to select academic documents
+                    </span>
+
+                    <input
+                        type="file"
+                        id="pdfFile"
+                        accept=".pdf"
+                        hidden
+                    >
+
+                </label>
+
+                <div id="fileName" class="file-name">
+                    No file selected
+                </div>
+
+                <button id="uploadBtn" class="primary-btn">
+                    Upload & Process
+                </button>
+
+            </div>
+
+
+            <!-- System Status -->
+            <div class="sidebar-section">
+
+                <h3>System Status</h3>
+
+                <div class="status-item">
+                    <span class="status-dot"></span>
+                    <span>Ollama</span>
+                    <span class="status-text">Online</span>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-dot"></span>
+                    <span>ChromaDB</span>
+                    <span class="status-text">Ready</span>
+                </div>
+
+                <div class="status-item">
+                    <span class="status-dot"></span>
+                    <span>RAG System</span>
+                    <span class="status-text">Ready</span>
+                </div>
+
+            </div>
+
+
+            <!-- Model Information -->
+            <div class="sidebar-section model-section">
+
+                <h3>Models</h3>
+
+                <div class="model-card">
+
+                    <span>🤖</span>
+
+                    <div>
+                        <small>LLM</small>
+                        <strong>Llama 3.2</strong>
+                    </div>
+
+                </div>
+
+                <div class="model-card">
+
+                    <span>🔤</span>
+
+                    <div>
+                        <small>Embedding</small>
+                        <strong>Nomic Embed</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-footer">
+                Academic Question Answering System
+                <br>
+                <span>Powered by RAG + Ollama</span>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <!-- Header -->
+            <header class="header">
+
+                <div>
+                    <h1>Academic Question Answering</h1>
+
+                    <p>
+                        Ask questions from your academic documents
+                    </p>
+                </div>
+
+                <div class="header-badge">
+                    <span class="online-dot"></span>
+                    Local AI
+                </div>
+
+            </header>
+
+
+            <!-- Chat Area -->
+            <section id="chatBox" class="chat-box">
+
+                <!-- Welcome Screen -->
+                <div id="welcome" class="welcome">
+
+                    <div class="welcome-icon">
+                        📚
+                    </div>
+
+                    <h2>
+                        Welcome to Academic RAG
+                    </h2>
+
+                    <p>
+                        Upload your academic PDFs and ask questions
+                        based on their content.
+                    </p>
+
+
+                    <div class="feature-container">
+
+                        <div class="feature-card">
+
+                            <div class="feature-icon">
+                                📄
+                            </div>
+
+                            <h3>Upload Documents</h3>
+
+                            <p>
+                                Upload research papers,
+                                textbooks and notes.
+                            </p>
+
+                        </div>
+
+
+                        <div class="feature-card">
+
+                            <div class="feature-icon">
+                                🔎
+                            </div>
+
+                            <h3>Smart Retrieval</h3>
+
+                            <p>
+                                Relevant information is retrieved
+                                using vector search.
+                            </p>
+
+                        </div>
+
+
+                        <div class="feature-card">
+
+                            <div class="feature-icon">
+                                🤖
+                            </div>
+
+                            <h3>AI Answers</h3>
+
+                            <p>
+                                Llama 3.2 generates answers
+                                from your documents.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Question Input -->
+            <div class="input-container">
+
+                <div class="input-wrapper">
+
+                    <textarea
+                        id="question"
+                        placeholder="Ask a question about your academic documents..."
+                        rows="1"
+                    ></textarea>
+
+                    <button
+                        id="askBtn"
+                        class="send-btn"
+                        title="Ask question"
+                    >
+                        ➤
+                    </button>
+
+                </div>
+
+                <p class="input-info">
+                    Answers are generated only from your uploaded documents.
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
